@@ -1,0 +1,36 @@
+version : '3'
+
+services:
+
+  db_compte :
+    image : postgres:15.4
+
+    volumes:
+        - database:/var/lib/postgresql/data/
+        
+    environment:
+        - POSTGRES_DB=gestionCompteDatabase
+        - POSTGRES_USER=adminCompte
+        - POSTGRES_PASSWORD=admin
+    ports:
+      - 5432:5432    
+
+
+  backend_compte:
+  
+    image: backend
+
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      
+    volumes: 
+      - '..:/var/www/html'
+    ports:
+      - 80:80
+    environment:
+      XDEBUG_MODE: debug
+      XDEBUG_CONFIG: client_host=host.docker.internal client_port=9003
+
+volumes:
+    database:
