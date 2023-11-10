@@ -1,6 +1,7 @@
 <?
 session_start();
 date_default_timezone_set('Europe/Paris');
+include_once "sql/table_sql.php";
 ?>
 
 <!DOCTYPE html>
@@ -17,13 +18,14 @@ date_default_timezone_set('Europe/Paris');
 <body>
 
 
-    <?
-    if (isset($_SESSION["ad_username"])) {
-      include_once (isset($_GET["content"]) ? $_GET["content"] : "connexion") . ".php";
-    }else{
-        // include_once "connexion.php";
-    }
-    ?>
+<?
+if (isset($_SESSION["ad_username"])) {
+	include_once (isset($_GET["content"]) ? $_GET["content"] : "connexion") . ".php";
+} else {
+	// include_once "connexion.php";
+	echo('coucou');
+}
+?>
 
 </body>
 
