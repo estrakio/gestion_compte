@@ -1,0 +1,37 @@
+body
+{
+    font-family: "Arial";
+    margin: 0;
+    color: lightgrey;
+    height: 87vh;
+    background-image: url("../resssources/images/bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav{
+    height: 7vh;
+    background: #0a0b10;
+    display: flex;
+}
+
+.nom_app{
+    font-size: 3vh;
+    margin: 1% ;
+}
+.menu{
+    display: flex;
+    align-items: center;
+}
+
+.button_nav{
+    color: lightgrey;
+    font-size: 20px;
+    flex-direction: row;
+    margin-left: 30px;
+}
+
+a{
+    text-decoration:none;
+}
